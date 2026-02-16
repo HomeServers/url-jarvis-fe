@@ -11,7 +11,7 @@ import { SearchInput } from '@/components/search/search-input';
 import { SearchAnswer } from '@/components/search/search-answer';
 import { SourceCard } from '@/components/search/source-card';
 import { Button } from '@/components/ui/button';
-import { Spinner } from '@/components/ui/spinner';
+import { UrlDetailSkeleton, SearchResultSkeleton } from '@/components/ui/skeleton';
 import type { UrlResponse } from '@/types/url';
 import type { SearchResult } from '@/types/search';
 
@@ -84,8 +84,8 @@ export default function UrlDetailPage() {
 
   if (loading) {
     return (
-      <div className="flex justify-center py-12">
-        <Spinner />
+      <div className="mx-auto max-w-3xl space-y-6">
+        <UrlDetailSkeleton />
       </div>
     );
   }
@@ -133,11 +133,7 @@ export default function UrlDetailPage() {
           </h3>
           <SearchInput onSearch={handleSearch} loading={searchLoading} />
 
-          {searchLoading && (
-            <div className="flex justify-center py-8">
-              <Spinner />
-            </div>
-          )}
+          {searchLoading && <SearchResultSkeleton />}
 
           {searchResult && (
             <div className="space-y-4">

@@ -5,7 +5,7 @@ import { apiClient } from '@/lib/api-client';
 import { SearchInput } from '@/components/search/search-input';
 import { SearchAnswer } from '@/components/search/search-answer';
 import { SourceCard } from '@/components/search/source-card';
-import { Spinner } from '@/components/ui/spinner';
+import { SearchResultSkeleton } from '@/components/ui/skeleton';
 import type { SearchResult } from '@/types/search';
 
 export default function SearchPage() {
@@ -41,11 +41,7 @@ export default function SearchPage() {
 
       <SearchInput onSearch={handleSearch} loading={loading} />
 
-      {loading && (
-        <div className="flex justify-center py-8">
-          <Spinner />
-        </div>
-      )}
+      {loading && <SearchResultSkeleton />}
 
       {error && (
         <p className="text-center text-sm text-red-500">{error}</p>

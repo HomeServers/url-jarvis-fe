@@ -7,7 +7,7 @@ import { usePolling } from '@/hooks/use-polling';
 import { UrlRegisterForm } from '@/components/url/url-register-form';
 import { UrlListItem } from '@/components/url/url-list-item';
 import { Pagination } from '@/components/ui/pagination';
-import { Spinner } from '@/components/ui/spinner';
+import { UrlListSkeleton } from '@/components/ui/skeleton';
 import { EmptyState } from '@/components/ui/empty-state';
 import type { PaginatedData } from '@/types/api';
 import type { UrlResponse } from '@/types/url';
@@ -69,9 +69,7 @@ export default function DashboardPage() {
       <UrlRegisterForm onRegistered={handleRegistered} />
 
       {loading ? (
-        <div className="flex justify-center py-12">
-          <Spinner />
-        </div>
+        <UrlListSkeleton />
       ) : urls.length === 0 ? (
         <EmptyState
           title="등록된 URL이 없습니다"
