@@ -1,4 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
   <rect width="192" height="192" rx="40" ry="40" fill="#2563EB"/>
-  <text x="96" y="112" font-family="Arial, Helvetica, sans-serif" font-size="80" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="central">UJ</text>
+  <!-- 체인 링크 -->
+  <path d="M66 111a24 24 0 010-33.94l8.49-8.49a24 24 0 0133.94 0" stroke="white" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <path d="M126 81a24 24 0 010 33.94l-8.49 8.49a24 24 0 01-33.94 0" stroke="white" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <line x1="81" y1="111" x2="111" y2="81" stroke="white" stroke-width="11" stroke-linecap="round"/>
+  <!-- 돋보기 -->
+  <circle cx="132" cy="60" r="21" stroke="white" stroke-width="10" fill="none"/>
+  <line x1="147" y1="75" x2="162" y2="90" stroke="white" stroke-width="11" stroke-linecap="round"/>
 </svg>
