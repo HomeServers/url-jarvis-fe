@@ -18,7 +18,8 @@ export default function DashboardPage() {
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(true);
 
-  const fetchUrls = useCallback(async (pageNum: number) => {
+  const fetchUrls = useCallback(async (pageNum: number, showLoading = false) => {
+    if (showLoading) setLoading(true);
     try {
       const res = await apiClient<PaginatedData<UrlResponse>>(
         `/api/urls?page=${pageNum}&size=20`,
@@ -27,12 +28,13 @@ export default function DashboardPage() {
       setTotalPages(res.data.totalPages);
     } catch {
       // 401 시 auth guard가 리다이렉트 처리
+    } finally {
+      if (showLoading) setLoading(false);
     }
   }, []);
 
   useEffect(() => {
-    setLoading(true);
-    fetchUrls(page).finally(() => setLoading(false));
+    fetchUrls(page, true);
   }, [page, fetchUrls]);
 
   // PENDING 또는 CRAWLING URL이 있으면 폴링

@@ -13,7 +13,10 @@ function GoogleCallbackInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { login } = useAuthStore();
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(() => {
+    const code = searchParams.get('code');
+    return code ? null : '인증 코드가 없습니다.';
+  });
   const calledRef = useRef(false);
 
   useEffect(() => {
@@ -21,10 +24,7 @@ function GoogleCallbackInner() {
     calledRef.current = true;
 
     const code = searchParams.get('code');
-    if (!code) {
-      setError('인증 코드가 없습니다.');
-      return;
-    }
+    if (!code) return;
 
     (async () => {
       try {

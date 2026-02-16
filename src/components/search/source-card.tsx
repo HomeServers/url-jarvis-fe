@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import type { SearchSource } from '@/types/search';
 
@@ -15,10 +16,13 @@ export function SourceCard({ source }: SourceCardProps) {
     >
       <div className="flex gap-3">
         {source.thumbnail && (
-          <img
+          <Image
             src={source.thumbnail}
             alt=""
+            width={64}
+            height={64}
             className="h-16 w-16 shrink-0 rounded-md object-cover"
+            unoptimized
           />
         )}
         <div className="min-w-0 flex-1">

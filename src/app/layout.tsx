@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { AuthHydrator } from './auth-hydrator';
+import { ServiceWorkerRegister } from './sw-register';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -39,12 +40,13 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
-        <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+        <link rel="apple-touch-icon" href="/icons/icon-192.svg" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
         <AuthHydrator />
+        <ServiceWorkerRegister />
         {children}
       </body>
     </html>

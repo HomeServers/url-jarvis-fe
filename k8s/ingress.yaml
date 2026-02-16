@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: url-jarvis-ingress
+  namespace: jarvis
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - url-jarvis.nuhgnod.site
+      secretName: url-jarvis-tls
+  rules:
+    - host: url-jarvis.nuhgnod.site
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: url-jarvis
+                port:
+                  number: 8080
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: url-jarvis-web
+                port:
+                  number: 3000

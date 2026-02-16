@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: url-jarvis-web
+  namespace: jarvis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: url-jarvis-web
+  template:
+    metadata:
+      labels:
+        app: url-jarvis-web
+    spec:
+      containers:
+        - name: url-jarvis-web
+          image: nuhgnod/url-jarvis-web:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NEXT_PUBLIC_API_URL
+              value: ""
+          resources:
+            requests:
+              memory: 128Mi
+              cpu: 100m
+            limits:
+              memory: 256Mi
+              cpu: 200m
