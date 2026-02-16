@@ -7,7 +7,7 @@ interface SourceCardProps {
 }
 
 export function SourceCard({ source }: SourceCardProps) {
-  const similarityPercent = Math.round(source.similarity * 100);
+  const scorePercent = Math.round(source.score * 100);
 
   return (
     <Link
@@ -31,7 +31,7 @@ export function SourceCard({ source }: SourceCardProps) {
               {source.title}
             </h4>
             <span className="shrink-0 rounded bg-blue-100 px-1.5 py-0.5 text-xs font-medium text-blue-700 dark:bg-blue-900 dark:text-blue-300">
-              {similarityPercent}%
+              {scorePercent}%
             </span>
           </div>
           <p className="mt-1 text-xs text-gray-400 dark:text-gray-500">{source.domain}</p>

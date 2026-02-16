@@ -10,7 +10,7 @@ export interface SearchSource {
   thumbnail: string | null;
   domain: string;
   matchedContent: string;
-  similarity: number;
+  score: number;
 }
 
 export interface SearchResult {
