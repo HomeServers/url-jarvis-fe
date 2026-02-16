@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Logo } from '@/components/ui/logo';
 
 const navItems = [
   { href: '/dashboard', label: 'URL 목록', icon: LinkIcon },
@@ -14,7 +15,8 @@ export function Sidebar() {
   return (
     <aside className="hidden w-60 shrink-0 border-r border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950 md:block">
       <div className="flex h-14 items-center border-b border-gray-200 px-4 dark:border-gray-800">
-        <Link href="/dashboard" className="text-lg font-bold text-gray-900 dark:text-white">
+        <Link href="/dashboard" className="flex items-center gap-2 text-lg font-bold text-gray-900 dark:text-white">
+          <Logo size={24} />
           URL Jarvis
         </Link>
       </div>

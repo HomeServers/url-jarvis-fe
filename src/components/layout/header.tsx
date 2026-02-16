@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useAuthStore } from '@/stores/auth-store';
 import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/ui/logo';
 
 export function Header() {
   const router = useRouter();
@@ -19,7 +20,8 @@ export function Header() {
   return (
     <header className="flex h-14 items-center justify-between border-b border-gray-200 bg-white px-4 dark:border-gray-800 dark:bg-gray-950">
       {/* 모바일에서만 보이는 로고 */}
-      <Link href="/dashboard" className="text-lg font-bold text-gray-900 dark:text-white md:hidden">
+      <Link href="/dashboard" className="flex items-center gap-2 text-lg font-bold text-gray-900 dark:text-white md:hidden">
+        <Logo size={24} />
         URL Jarvis
       </Link>
       <div className="hidden md:block" />

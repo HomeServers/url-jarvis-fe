@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { GOOGLE_CLIENT_ID, GOOGLE_REDIRECT_URI } from '@/lib/constants';
 import { useAuthStore } from '@/stores/auth-store';
 import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/ui/logo';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -31,7 +32,8 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 dark:bg-gray-950">
       <div className="w-full max-w-sm space-y-8 px-4">
-        <div className="text-center">
+        <div className="flex flex-col items-center text-center">
+          <Logo size={56} className="mb-4" />
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">URL Jarvis</h1>
           <p className="mt-2 text-gray-600 dark:text-gray-400">
             URL을 저장하고, AI로 검색하세요.
