@@ -22,7 +22,7 @@ export function Header() {
       {/* 모바일에서만 보이는 로고 */}
       <Link href="/dashboard" className="flex items-center gap-2 text-lg font-bold text-gray-900 dark:text-white md:hidden">
         <Logo size={24} />
-        URL Jarvis
+        LinkMind
       </Link>
       <div className="hidden md:block" />
 

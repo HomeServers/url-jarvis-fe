@@ -33,10 +33,10 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-gray-50 dark:bg-gray-950">
       <div className="w-full max-w-sm space-y-8 px-4">
         <div className="flex flex-col items-center text-center">
-          <Logo size={56} className="mb-4" />
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">URL Jarvis</h1>
+          <Logo size={72} className="mb-5" />
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">LinkMind</h1>
           <p className="mt-2 text-gray-600 dark:text-gray-400">
-            URL을 저장하고, AI로 검색하세요.
+            링크를 저장하고, AI로 검색하세요.
           </p>
         </div>
 

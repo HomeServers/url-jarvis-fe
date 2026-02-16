@@ -1,11 +1,11 @@
 {
-  "name": "URL Jarvis",
-  "short_name": "URL Jarvis",
-  "description": "URL을 저장하고, AI로 검색하세요.",
+  "name": "LinkMind",
+  "short_name": "LinkMind",
+  "description": "링크를 저장하고, AI로 검색하세요.",
   "start_url": "/dashboard",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#2563eb",
+  "theme_color": "#4F46E5",
   "orientation": "portrait-primary",
   "icons": [
     {

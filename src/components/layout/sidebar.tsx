@@ -17,7 +17,7 @@ export function Sidebar() {
       <div className="flex h-14 items-center border-b border-gray-200 px-4 dark:border-gray-800">
         <Link href="/dashboard" className="flex items-center gap-2 text-lg font-bold text-gray-900 dark:text-white">
           <Logo size={24} />
-          URL Jarvis
+          LinkMind
         </Link>
       </div>
       <nav className="flex flex-col gap-1 p-3">

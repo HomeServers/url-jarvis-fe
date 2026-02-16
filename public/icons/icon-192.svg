@@ -1,10 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
-  <rect width="192" height="192" rx="40" ry="40" fill="#2563EB"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="40" ry="40" fill="url(#bg)"/>
   <!-- 체인 링크 -->
-  <path d="M66 111a24 24 0 010-33.94l8.49-8.49a24 24 0 0133.94 0" stroke="white" stroke-width="11" stroke-linecap="round" fill="none"/>
-  <path d="M126 81a24 24 0 010 33.94l-8.49 8.49a24 24 0 01-33.94 0" stroke="white" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <path d="M69 108a21 21 0 010-29.7l7.4-7.4a21 21 0 0129.7 0" stroke="white" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <path d="M123 84a21 21 0 010 29.7l-7.4 7.4a21 21 0 01-29.7 0" stroke="white" stroke-width="11" stroke-linecap="round" fill="none"/>
   <line x1="81" y1="111" x2="111" y2="81" stroke="white" stroke-width="11" stroke-linecap="round"/>
-  <!-- 돋보기 -->
-  <circle cx="132" cy="60" r="21" stroke="white" stroke-width="10" fill="none"/>
-  <line x1="147" y1="75" x2="162" y2="90" stroke="white" stroke-width="11" stroke-linecap="round"/>
+  <!-- AI 스파클 -->
+  <path d="M42 48l7.2-18L56.4 48 49.2 66z" fill="white"/>
+  <path d="M147 36l5.4-13.2 5.4 13.2 5.4 13.2-5.4-13.2z" fill="white" opacity="0.9"/>
+  <path d="M153 138l6-15 6 15 6 15-6-15z" fill="white" opacity="0.85"/>
+  <!-- 뉴런 노드 -->
+  <circle cx="33" cy="132" r="7.8" fill="white" opacity="0.7"/>
+  <line x1="39" y1="128" x2="69" y2="108" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+  <circle cx="156" cy="84" r="7.8" fill="white" opacity="0.7"/>
+  <line x1="150" y1="86" x2="123" y2="90" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
 </svg>

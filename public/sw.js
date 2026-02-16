@@ -1,4 +1,4 @@
-const CACHE_NAME = 'url-jarvis-v1';
+const CACHE_NAME = 'linkmind-v1';
 const STATIC_ASSETS = ['/', '/dashboard', '/login'];
 
 self.addEventListener('install', (event) => {

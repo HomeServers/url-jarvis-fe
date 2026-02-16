@@ -15,13 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'URL Jarvis',
-  description: 'URL을 저장하고, AI로 검색하세요.',
+  title: 'LinkMind',
+  description: '링크를 저장하고, AI로 검색하세요.',
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'URL Jarvis',
+    title: 'LinkMind',
   },
 };
 
