@@ -3,20 +3,16 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuthStore } from '@/stores/auth-store';
-import { Spinner } from '@/components/ui/spinner';
 
-export default function HomePage() {
+export function useAuthGuard() {
   const router = useRouter();
   const { accessToken, isHydrated } = useAuthStore();
 
   useEffect(() => {
-    if (!isHydrated) return;
-    router.replace(accessToken ? '/dashboard' : '/login');
+    if (isHydrated && !accessToken) {
+      router.replace('/login');
+    }
   }, [isHydrated, accessToken, router]);
 
-  return (
-    <div className="flex min-h-screen items-center justify-center">
-      <Spinner />
-    </div>
-  );
+  return { isReady: isHydrated && !!accessToken };
 }
