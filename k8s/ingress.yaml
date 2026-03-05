@@ -9,10 +9,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - url-jarvis.nuhgnod.site
+        - link-mind.gold-grit.com
       secretName: url-jarvis-tls
   rules:
-    - host: url-jarvis.nuhgnod.site
+    - host: link-mind.gold-grit.com
       http:
         paths:
           - path: /api

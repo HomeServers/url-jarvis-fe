@@ -35,6 +35,34 @@ export function UrlListSkeleton({ count = 5 }: { count?: number }) {
   );
 }
 
+/** URL 카드 아이템 스켈레톤 */
+export function UrlCardItemSkeleton() {
+  return (
+    <div className="flex flex-col rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900">
+      <div className="flex items-start justify-between gap-2">
+        <Skeleton className="h-4 w-2/3" />
+        <Skeleton className="h-5 w-16 rounded-full" />
+      </div>
+      <div className="mt-2 space-y-1.5">
+        <Skeleton className="h-3 w-full" />
+        <Skeleton className="h-3 w-4/5" />
+      </div>
+      <Skeleton className="mt-auto pt-3 h-3 w-1/3" />
+    </div>
+  );
+}
+
+/** URL 그리드 스켈레톤 (카드 뷰) */
+export function UrlGridSkeleton({ count = 6 }: { count?: number }) {
+  return (
+    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {Array.from({ length: count }, (_, i) => (
+        <UrlCardItemSkeleton key={i} />
+      ))}
+    </div>
+  );
+}
+
 /** URL 상세 카드 스켈레톤 */
 export function UrlDetailSkeleton() {
   return (
