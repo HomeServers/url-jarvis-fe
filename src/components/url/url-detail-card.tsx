@@ -1,4 +1,5 @@
 import { Card } from '@/components/ui/card';
+import { RichText } from '@/components/ui/rich-text';
 import { UrlStatusBadge } from './url-status-badge';
 import type { UrlResponse } from '@/types/url';
 
@@ -38,7 +39,9 @@ export function UrlDetailCard({ url }: UrlDetailCardProps) {
           {url.description && (
             <div className="sm:col-span-2">
               <dt className="text-gray-500 dark:text-gray-400">설명</dt>
-              <dd className="mt-0.5 text-gray-900 dark:text-white">{url.description}</dd>
+              <dd className="mt-0.5 text-gray-900 dark:text-white">
+                <RichText content={url.description} />
+              </dd>
             </div>
           )}
           {url.status === 'FAILED' && url.failReason && (
